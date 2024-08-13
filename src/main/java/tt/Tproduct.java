@@ -1,17 +1,17 @@
 package tt;
 
-public class product {
-    private String productName;
+public class Tproduct {
+    private static String productName;
     private String category;
     private double price;
     private int quantity;
 
 
-    public product(String productName, String category, double price, int quantity) {
+    public Tproduct(String productName, String category, double price, int quantity) {
         this.productName = productName;
         this.category = category;
         this.price = price;
-        this.quantity =quantity;
+        this.quantity = quantity;
 
 
     }
@@ -39,8 +39,8 @@ public class product {
     }
 
 
-    public void setcategory(String category ) {
-        this. category= category;
+    public void setcategory(String category) {
+        this.category = category;
     }
 
     public void setprice(double price) {
@@ -52,5 +52,13 @@ public class product {
     }
 
 
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public boolean getName() {
+        this.productName=productName;
+        return false;
+    }
 
 }

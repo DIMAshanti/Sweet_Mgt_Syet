@@ -2,7 +2,7 @@ Feature: login
 
   Scenario: valid login
     Given I am not in system
-    When set username "haya" and pass "123"
+    When set username "haya@gmail.com" and pass "123"
     Then login succeed
 
 

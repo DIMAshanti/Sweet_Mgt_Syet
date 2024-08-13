@@ -1,23 +1,18 @@
 package tt;
 
-
-
-import java.util.Date;
-
-
 import java.util.Date;
 import java.util.List;
-import java.util.ArrayList;
 
-public class order {
+public class Torder {
+
     private String orderName;
     private Date date;
     private String description;
     private double total;
-    private List<product> products;  // Using a list to hold multiple products
+    private List<Tproduct> products;  // Using a list to hold multiple products
 
     // Constructor that initializes the order with multiple products
-    public order(String orderName, Date date, String description, List<product> products) {
+    public Torder(String orderName, Date date, String description, List<Tproduct> products) {
         this.orderName = orderName;
         this.date = date;
         this.description = description;
@@ -26,9 +21,9 @@ public class order {
     }
 
     // Method to calculate the total price of the order
-    private double calculateTotal(List<product> products) {
+    private double calculateTotal(List<Tproduct> products) {
         double total = 0;
-        for (product product : products)
+        for (Tproduct product : products)
             total += product.getprice() * product.getquantity();  // Assuming Product has getPrice and getQuantity methods
         return total;
     }
@@ -50,7 +45,7 @@ public class order {
         return total;
     }
 
-    public List<product> getProducts() {
+    public List<Tproduct> getProducts() {
         return products;
     }
 
@@ -68,13 +63,14 @@ public class order {
     }
 
     // Adding and removing products
-    public void addProduct(product product) {
+    public void addProduct(Tproduct product) {
         this.products.add(product);
         this.total = calculateTotal(this.products);
     }
 
-    public void removeProduct(product product) {
+    public void removeProduct(Tproduct product) {
         this.products.remove(product);
         this.total = calculateTotal(this.products);
     }
+
 }

@@ -38,10 +38,10 @@ public class mytest {
         addUser(admin);
 
 
-        product p1 = new product("Chocolate Cake", "Desserts", 15, 50);
-        product p2 = new product("Vanilla Ice Cream", "Frozen Desserts", 15, 30);
-        product p3 = new product("Apple Pie", "Baked Goods", 15, 20);
-        product p4 = new product("Cinnamon Roll", "Pastries", 10, 40);
+        Tproduct p1 = new Tproduct("Chocolate Cake", "Desserts", 15, 50);
+        Tproduct p2 = new Tproduct("Vanilla Ice Cream", "Frozen Desserts", 15, 30);
+        Tproduct p3 = new Tproduct("Apple Pie", "Baked Goods", 15, 20);
+        Tproduct p4 = new Tproduct("Cinnamon Roll", "Pastries", 10, 40);
 
         addproduct(p1);
         addproduct(p2);
@@ -65,19 +65,19 @@ public class mytest {
 
 
 
-        List<product> order1Products = new ArrayList<>();
+        List<Tproduct> order1Products = new ArrayList<>();
         order1Products.add(p1);
         order1Products.add(p3);
-        order myOrder1 = new order("Order 1: Cakes and Pies", new Date(), "Includes various cakes and pies", order1Products);
+        Torder myOrder1 = new Torder("Order 1: Cakes and Pies", new Date(), "Includes various cakes and pies", order1Products);
 
-        List<product> order2Products = new ArrayList<>();
+        List<Tproduct> order2Products = new ArrayList<>();
         order2Products.add(p2);
         order2Products.add(p4);
-        order myOrder2 = new order("Order 2: Ice Cream and Rolls", new Date(), "Ice cream and pastries combo", order2Products);
+        Torder myOrder2 = new Torder("Order 2: Ice Cream and Rolls", new Date(), "Ice cream and pastries combo", order2Products);
 
 
-        List<product> order3Products = new ArrayList<>(List.of(p1, p2, p3, p4));
-        order myOrder3 = new order("Order 3: Full Menu", new Date(), "A full range of desserts", order3Products);
+        List<Tproduct> order3Products = new ArrayList<>(List.of(p1, p2, p3, p4));
+        Torder myOrder3 = new Torder("Order 3: Full Menu", new Date(), "A full range of desserts", order3Products);
 
         addorder(myOrder2);
         addorder(myOrder1);
@@ -88,20 +88,20 @@ public class mytest {
 
 
     private List<Person> up = new ArrayList<>();
-    private List<product> prolist = new ArrayList<>();
+    private List<Tproduct> prolist = new ArrayList<>();
     private List<recipe> reclist = new ArrayList<>();
-    private List<order> orderlist = new ArrayList<>();
+    private List<Torder> orderlist = new ArrayList<>();
 
 
     public void addUser(Person user) {
         up.add(user);
     }
 
-    public void addproduct(product product) {
+    public void addproduct(Tproduct product) {
         prolist.add(product);
     }
 
-    public void removeproduct(product product) {
+    public void removeproduct(Tproduct product) {
         prolist.remove(product);
     }
 
@@ -110,7 +110,7 @@ public class mytest {
         reclist.add(recipe);
     }
 
-    public void addorder(order order) {
+    public void addorder(Torder order) {
         orderlist.add(order);
     }
 
@@ -607,7 +607,10 @@ public class mytest {
         System.out.println("No comments or ratings found for " + recipeTitle);
         return false;
     }
+    public Tproduct[] getProlist() {
 
+        return new Tproduct[0];
+    }
 
 
 }
