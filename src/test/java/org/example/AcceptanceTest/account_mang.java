@@ -76,7 +76,6 @@ public class account_mang {
 
     @When("I update my account details with Email {string} and new data \"\\{\"name\": \"Supplier Z\",  \"phone\": \"{int}\"}\"")
     public void iUpdateMyAccountDetailsWithEmailAndNewData(String string, Integer int1) {
-
     }
 
     @Then("my account update succeeds")

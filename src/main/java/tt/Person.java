@@ -10,6 +10,7 @@ public class Person {
     private String phoneNum;
     private  String City;
     private  String Role;
+    private String businessInfo;  // Add this field
 
 
 
@@ -26,11 +27,7 @@ public class Person {
         Role=role;
     }
 
-    public Person (String un, String pa, String em) {
-        Name =un;
-        pass=pa;
-       email=em;
-    }
+
     public String getID() {
         return ID;
     }
@@ -59,6 +56,28 @@ public class Person {
 
     public void setPass(String pass) {
         this.pass = pass;
+    }
+
+    public void setname(String Name) { 
+        this.Name= Name;
+    }
+
+    public void setPhoneNum(String phoneNum) {
+        this.phoneNum=phoneNum;
+    }
+
+    public void setCity(String City) {
+        this.City=City;
+    }
+
+
+    // Add a getter and setter for businessInfo
+    public String getBusinessInfo() {
+        return businessInfo;
+    }
+
+    public void setBusinessInfo(String businessInfo) {
+        this.businessInfo = businessInfo;
     }
 
 

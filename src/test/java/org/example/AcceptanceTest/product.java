@@ -21,15 +21,16 @@ public class product {
         List<Map<String, String>> rows = dataTable.asMaps(String.class, String.class);
 
         for (Map<String, String> columns : rows) {
+            String pid = columns.get("pid");
             String productName = columns.get("name");
             String category = columns.get("category");
             double price = Double.parseDouble(columns.get("price"));
 
-            Tproduct newProduct = new Tproduct(productName, category, price, 0);  // Assuming quantity is 0 when first added
-            String productId = "P" + (inventory.size() + 1);  // Generating a unique ID
+            Tproduct newProduct = new Tproduct(pid,productName, category, price, 0);
+            String productId = "P" + (inventory.size() + 1);
 
             inventory.put(productId, newProduct);
-            testInstance.addproduct(newProduct);  // Add to the main product list in mytest
+            testInstance.addproduct(newProduct);
             dashboardMessage = "Product added successfully";
         }
     }
@@ -41,10 +42,10 @@ public class product {
 
     @Given("I have a product with ID {string} in the inventory")
     public void iHaveAProductWithIDInTheInventory(String productId) {
-        // For testing purposes, we simulate having a product with the given ID
-        Tproduct existingProduct = new Tproduct("Sample Product", "Sample Category", 10.00, 100);
+
+        Tproduct existingProduct = new Tproduct("P001", "Chocolate Cake", "Dessert", 15.99, 10);
         inventory.put(productId, existingProduct);
-        testInstance.addproduct(existingProduct);  // Add to the main product list in mytest
+        testInstance.addproduct(existingProduct);
     }
 
     @When("I update the product {string} with the following details")

@@ -129,4 +129,10 @@ public class MonitoringandReporting {
     public void i_should_see_statistics_for_registered_users_in_ramallah(String city) {
 
     }
+    @When("I select the city \"Ramallah")
+    public void iSelectTheCityRamallah() {
+    }
+    @Then("I should see statistics for registered users in \"Ramallah")
+    public void iShouldSeeStatisticsForRegisteredUsersInRamallah() {
+    }
 }

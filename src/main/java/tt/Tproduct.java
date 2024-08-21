@@ -1,13 +1,16 @@
 package tt;
 
 public class Tproduct {
-    private static String productName;
+    private  String pid;
+    private String productName;
     private String category;
     private double price;
     private int quantity;
+    private boolean hasDiscount;
 
 
-    public Tproduct(String productName, String category, double price, int quantity) {
+    public Tproduct( String pid,String productName, String category, double price, int quantity) {
+        this.pid=pid;
         this.productName = productName;
         this.category = category;
         this.price = price;
@@ -16,6 +19,9 @@ public class Tproduct {
 
     }
 
+    public String getPid(){
+        return pid;
+    }
 
     public String getproductName() {
         return productName;
@@ -32,7 +38,12 @@ public class Tproduct {
     public int getquantity() {
         return quantity;
     }
+    public boolean hasDiscount() {
+        return hasDiscount;
+    }
 
+
+   public void setPid(String pid){this.pid=pid;}
 
     public void setproductName(String productName) {
         this.productName = productName;
@@ -60,5 +71,13 @@ public class Tproduct {
         this.productName=productName;
         return false;
     }
+
+    public void setDiscount(boolean hasDiscount) {
+        this.hasDiscount = hasDiscount;
+    }
+
+
+
+
 
 }

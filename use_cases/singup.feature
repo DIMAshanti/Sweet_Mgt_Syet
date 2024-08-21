@@ -56,6 +56,6 @@ Feature: singup
 
 
   Scenario: sing up  with a duplicate email
-    Given a user with the email "existing@example.com" already exists
+    Given a user with the email "haya@gmail.com" already exists
     When the user tries to register with the same email
     Then the user should see a popup message indicating the email is already in use

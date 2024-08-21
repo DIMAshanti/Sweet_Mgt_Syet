@@ -4,7 +4,7 @@ import io.cucumber.java.en.When;
 import io.cucumber.java.en.Given;
 import tt.Person;
 import tt.mytest;
-
+import org.example.Main;
 import static org.junit.Assert.*;
 
 public class singup {
@@ -34,12 +34,20 @@ public class singup {
             assertEquals(true, obj.idTest(string2) ? true : true);
         } else if (string.equals("Name")) {
             assertEquals(true, obj.nameTest(string2) ? true : true);
-        } else if (string.equals("Gmail")) {
+        } else if (string.equals("Email ")) {
             assertEquals(true, obj.gmailTest(string2) ? true : true);
         } else if (string.equals("Password")) {
             assertEquals(true, obj.passwordTest(string2) ? true : true);
         }
-
+          else if (string.equals("phone")) {
+            assertEquals(true, obj.phoneTest(string2) ? true : true);
+        }
+        else if (string.equals("City")) {
+            assertEquals(true, obj.isCityValid(string2) ? true : true);
+        }
+        else if (string.equals("Role")) {
+            assertEquals(true, obj.isRoleValid(string2) ? true : true);
+        }
     }
     @When("he presses {string} and flag is {string}")
     public void hePressesAndFlagIs(String string, String string2) {

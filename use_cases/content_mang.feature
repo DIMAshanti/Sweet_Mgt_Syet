@@ -47,13 +47,13 @@ Feature: Content Management
     When I delete the dessert recipe
     Then the recipe should no longer be visible on my profile
 
-  Scenario: Leave Feedback on a Recipe
+  Scenario: provide feedback
     Given I am logged in as a user
     And I have tried the recipe titled "Banana Bread"
     When I leave feedback on the "Banana Bread" recipe with the comment "Great taste, but needs more baking time."
     Then my feedback should be visible under the "Banana Bread" recipe
 
-  Scenario: Delete User Feedback on a Recipe
+  Scenario: Delete User Feedback
     Given I am logged in as a user
     And I have left feedback with titled "Banana Bread" with the comment "Very powerful and easy to use!"
     When I delete my feedback on the "Banana Bread"

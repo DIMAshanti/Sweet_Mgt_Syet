@@ -17,7 +17,6 @@ public class Login {
         Person u1 = new Person("1", "haya", "123", "haya@gmail.com", "Qalqilya", "0599221233", "user");
         Person u2 = new Person("2", "rama", "123456", "rama@gmail.com", "nablus", "0599221233", "user");
         obj.addUser(u1);
-
         obj.addUser(u2);
 
 
