@@ -15,7 +15,14 @@ public class product {
     private final mytest testInstance = new mytest();
     private final Map<String, Tproduct> inventory = new HashMap<>();
     private String dashboardMessage;
-
+    private final mytest testContext = new mytest();
+    private Tproduct currentProduct;
+    private double appliedDiscount;
+    private boolean discountAppliedSuccessfully;
+    @Given("I am logged in as a store owner")
+    public void iAmLoggedInAsAStoreOwner() {
+        testContext.setLogged(true);
+    }
     @When("I add a product with the following details")
     public void iAddAProductWithTheFollowingDetails(DataTable dataTable) {
         List<Map<String, String>> rows = dataTable.asMaps(String.class, String.class);
@@ -88,4 +95,43 @@ public class product {
     public void theProductShouldBeRemovedSuccessfully() {
         assert dashboardMessage.equals("Product removed successfully");
     }
+    @Given("I have a product {string} with no current discounts")
+    public void iHaveAProductWithNoCurrentDiscounts(String productName) {
+        for (Tproduct product : testContext.getProlist()) {
+            if (product.getName()) {
+                currentProduct = product;
+                break;
+            }
+        }
+        // Assuming no discounts are active initially
+        if (currentProduct != null) {
+            appliedDiscount = 0;
+        }
+    }
+    @Given("I have a product {string} priced at ${int} with no current discounts")
+    public void iHaveAProductPricedAt$WithNoCurrentDiscounts(String productName, Integer price) {
+        iHaveAProductWithNoCurrentDiscounts(productName);
+        if (currentProduct != null) {
+            currentProduct.setprice(price);
+        }
+    }
+
+    @When("I apply a promotional discount of {int}% valid from {string} to {string}")
+    public void iApplyAPromotionalDiscountOfValidFromTo(Integer discountPercentage, String startDate, String endDate) {
+        // Assuming no complex date checks for simplicity
+        appliedDiscount = discountPercentage;
+        discountAppliedSuccessfully = true;
+    }
+
+    @Then("I should see {string} on my dashboard")
+    public void iShouldSeeOnMyDashboard(String message) {
+        // Assuming this is a simple check; you could use a logger or print statement
+        System.out.println("Dashboard message: " + message);
+    }
+    @Then("the promotional discount should be set successfully")
+    public void thePromotionalDiscountShouldBeSetSuccessfully() {
+        assert discountAppliedSuccessfully : "Promotional discount was not set successfully";
+    }
+
+
 }

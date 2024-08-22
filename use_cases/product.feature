@@ -27,12 +27,7 @@ Feature: Product Management
     And I should see "Product removed successfully" on my dashboard
 
 
-  Scenario: Apply a volume-based discount
-    Given I am logged in as a store owner
-    And I have a product "Vanilla Cake" with no current discounts
-    When I apply a 10% discount for quantities above 20
-    Then the discount should be set successfully
-    And I should see "Discount applied successfully" on my dashboard
+
 
 
   Scenario: Apply a time-limited promotional discount

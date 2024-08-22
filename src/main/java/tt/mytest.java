@@ -650,9 +650,9 @@ public class mytest {
     }
 
     // Inner class representing a Recipe
-    private static class Recipe {
+    public static class Recipe {
         private final String title;
-        private String status; // "Pending", "Public", "Rejected"
+        private static String status; // "Pending", "Public", "Rejected"
 
         public Recipe(String title, String status) {
             this.title = title;
@@ -663,7 +663,7 @@ public class mytest {
             return title;
         }
 
-        public String getStatus() {
+        public static String getStatus() {
             return status;
         }
 
