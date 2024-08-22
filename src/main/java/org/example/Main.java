@@ -1,5 +1,5 @@
 package org.example;
-//package org.example.AcceptanceTest;
+
 
 import tt.*;
 
@@ -125,7 +125,7 @@ public class Main {
     }
 
     private static Person user = new Person();
-    //private static Store st = new Store();
+
 
     private static void loginProcedure(Scanner input) {
         String adminUsername = "admin@gmail.com";
@@ -140,17 +140,17 @@ public class Main {
             return;
         }
 
-        // Now check for other users
+
       user = searchInUser(email);
 
         if (user != null) {
 
             if (password.equals("forget")) {
-                // User entered "forget", initiate password reset
+
                 obj.setEnteredemail(email);
                 forgotPass(email);
             } else if (user.getPass().equals(password)) {
-                // Login successful
+
                 currentUserEmail = email;
                 String role = user.getRole();
                 logger.info("Retrieved role: " + role);  // Debugging line
@@ -207,7 +207,7 @@ public class Main {
 
         logger.info("\nIn order to make a new account, you have to enter your information\n");
 
-        // Validate ID
+
         while (true) {
             ID = getInput("Please enter your ID");
             if (!idTest(ID)) {
@@ -238,7 +238,7 @@ public class Main {
             }
         }
 
-        // Validate Password
+
         while (true) {
             pass = getInput(PROMPT_PASSWORD_MESSAGE);
             if (!passwordTest(pass)) {
@@ -271,9 +271,6 @@ public class Main {
                 break;
             }
         }
-
-
-        // Assuming the `obj` and `createAccountForUser` are defined elsewhere
         obj.createAccountForUser(ID, Name, pass, email, City, phoneNum, Role);
         logger.info("\nYou have successfully registered in our system as " + Role + ". Welcome!\n");
         logInSignUp();
@@ -331,10 +328,10 @@ public class Main {
                 manageFeedback(input);
                 displayAdminMenu(input);
             case 10:
-                System.out.println("Logging out...");
+                logger.info("Logging out...");
                 logInSignUp();
             default:
-                System.out.println("Invalid choice. Please try again.");
+                logger.warning("Invalid choice. Please try again.");
                 displayAdminMenu(input);
                 break;
 
@@ -380,10 +377,10 @@ public class Main {
                 viewMyOrders(user.getEmail());
                 displayUserMenu(input);
             case 7:
-                System.out.println("Logging out...");
+                logger.info("Logging out...");
                 logInSignUp();
             default:
-                System.out.println("Invalid choice. Please try again.");
+                logger.warning("Invalid choice. Please try again.");
                 displayUserMenu(input);
                 break;
 
@@ -437,10 +434,10 @@ public class Main {
                 displayrecipesMenu(input);
 
             case 8:
-                System.out.println("Exit...");
+                logger.info("Exit...");
                 displayUserMenu(input);
             default:
-                System.out.println("Invalid choice. Please try again.");
+                logger.warning("Invalid choice. Please try again.");
                 displayrecipesMenu(input);
                 break;
 
@@ -487,10 +484,10 @@ public class Main {
                 displayorderMenu(input);
                 displaySpMenu(input, user.getEmail());
             case 7:
-                System.out.println("Logging out...");
+                logger.info("Logging out...");
                 logInSignUp();
             default:
-                System.out.println("Invalid choice. Please try again.");
+                logger.warning("Invalid choice. Please try again.");
                 displayrecipesMenu(input);
                 break;
 
@@ -544,10 +541,10 @@ public class Main {
 
 
             case 8:
-                System.out.println("Exit...");
+                logger.info("Exit...");
                 displaySpMenu(input, user.getEmail());
             default:
-                System.out.println("Invalid choice. Please try again.");
+                logger.warning("Invalid choice. Please try again.");
                 displayrecipesMenu(input);
                 break;
 
@@ -580,10 +577,10 @@ public class Main {
                 managePendingOrders(input,currentUserEmail);
                 displayorderMenu(input);
             case 3:
-                System.out.println("Exit...");
+                logger.info("Exit...");
                 displaySpMenu(input, user.getEmail());
             default:
-                System.out.println("Invalid choice. Please try again.");
+                logger.warning("Invalid choice. Please try again.");
                 displayrecipesMenu(input);
                 break;
 
@@ -599,9 +596,8 @@ public class Main {
                 ╠═════════════════════════════════════════════════════════════╣
                 ║ 1.send message                                              ║
                 ║ 2.Received message                                          ║ 
-                ║ 3.view message                                              ║    
-                ║ 4.Notification                                              ║                                                                       
-                ║ 5. Exit                                                     ║                                     
+                ║ 3.view message                                              ║                                                                           
+                ║ 4. Exit                                                     ║                                     
                 ╚═════════════════════════════════════════════════════════════╝
                   """ + ANSI_RESET + "\n" + CHOICE_PROMPT;
         System.out.println(menuOptions);
@@ -611,23 +607,16 @@ public class Main {
 
         switch (choice) {
             case 1:
-
-                System.out.print("Enter the recipient's email: ");
-                String recipientEmail = input.nextLine();
-
-                // Check if the recipient's email exists in the system
+                String recipientEmail = getInput("Enter the recipient's email: ");
                 if (obj.isemailExists(recipientEmail)) {
-                    System.out.print("Enter the message content: ");
-                    String messageContent = input.nextLine();
+                    String messageContent = getInput("Enter the message content: ");
 
                     // Send the message using backend, with sender's email already known
                    obj.sendMessage(currentUserEmail, recipientEmail, messageContent);
 
-
                 } else {
-                    System.out.println("Error: Recipient's email address not found.");
+                    logger.warning("Recipient's email address not found.");
                 }
-
                 displaycomMenu(input);
             case 2:
                 obj.viewMessages(currentUserEmail, input);
@@ -636,19 +625,12 @@ public class Main {
                 obj.viewConversationHistory(currentUserEmail);
                 displaycomMenu(input);
             case 4:
-                System.out.print("Enter the recipient's email for email notification: ");
-                String emailRecipient = input.nextLine();
-                System.out.print("Enter your message: ");
-                String emailMessage = input.nextLine();
-                obj.  sendEmailTo(emailRecipient, emailMessage); // Call your email sending method
-                displaycomMenu(input);
+                logger.info("Exit...");
+                //logInSignUp();
                 break;
-            case 5:
-                System.out.println("Exit...");
-                logInSignUp();
 
             default:
-                System.out.println("Invalid choice. Please try again.");
+                logger.warning("Invalid choice. Please try again.");
                 displayrecipesMenu(input);
                 break;
 
