@@ -20,7 +20,7 @@ import javax.mail.internet.MimeMessage;
 
 import static org.example.Main.logger;
 
-public class mytest {
+public class MyTest {
 
     private boolean validation;
     private boolean isLogged;
@@ -41,7 +41,7 @@ public class mytest {
 
 
 
-    public mytest() {
+    public MyTest() {
         Person u1 = new Person("1", "haya", "123456", "haya@gmail.com", "Qalqilya", "0599221233", "user");
 
         Person u2 = new Person("2", "rama", "123456", "rama@gmail.com", "nablus", "0599221233", "user");
@@ -184,7 +184,7 @@ public class mytest {
     public void setLogged(boolean isLogged) {
         this.isLogged = isLogged;
     }
-    public void iAmNotInSystem(mytest obj) {
+    public void iAmNotInSystem(MyTest obj) {
         obj.isLogged = false;
     }
     private static boolean searchinusernullflag;
