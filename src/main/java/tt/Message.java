@@ -26,6 +26,10 @@ public class Message {
         this.originalMessageId = originalMessageId;
     }
 
+    public Message() {
+
+    }
+
     // Getters
     public String getMessageId() {
         return messageId;
