@@ -5,21 +5,21 @@ import java.util.List;
 
 
 public class Torder {
-    private String oid;  // Unique order ID
-    private String userEmail;  // Email of the user placing the order
-    private LocalDateTime orderTime;  // The time the order was placed
-    //private String description;  // Description or status of the order
-    private double total;  // Total price of the order
-    private List<Tproduct> products;  // List of products in the order
+    private String oid;
+    private String userEmail;
+    private LocalDateTime orderTime;
 
-    // Constructor that initializes the order with the user's email and captures the current time
+    private double total;
+    private List<Tproduct> products;
+
+
     public Torder(String oid, String userEmail, List<Tproduct> products) {
         this.oid = oid;
-        this.userEmail = userEmail;  // Capture the user's email
-        this.orderTime = LocalDateTime.now();  // Capture the current time
-     //  this.description = description;
+        this.userEmail = userEmail;
+        this.orderTime = LocalDateTime.now();
+
         this.products = products;
-        this.total = calculateTotal(products); // Calculate total based on the products list
+        this.total = calculateTotal(products);
     }
 
     // Method to calculate the total price of the order
