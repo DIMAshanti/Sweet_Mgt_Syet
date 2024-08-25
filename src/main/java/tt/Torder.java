@@ -22,7 +22,6 @@ public class Torder {
         this.total = calculateTotal(products);
     }
 
-    // Method to calculate the total price of the order
     private double calculateTotal(List<Tproduct> products) {
         double total = 0;
         for (Tproduct product : products) {

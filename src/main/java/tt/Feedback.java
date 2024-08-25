@@ -6,7 +6,7 @@ public class Feedback {
     private String feedbackText;
     private String response;
 
-    // Constructor
+
     public Feedback(String feedbackId, String userEmail, String feedbackText) {
         this.feedbackId = feedbackId;
         this.userEmail = userEmail;
