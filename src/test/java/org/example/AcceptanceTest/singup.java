@@ -2,9 +2,9 @@ package org.example.AcceptanceTest;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Given;
-import tt.Person;
+
 import tt.mytest;
-import org.example.Main;
+
 import static org.junit.Assert.*;
 
 public class singup {

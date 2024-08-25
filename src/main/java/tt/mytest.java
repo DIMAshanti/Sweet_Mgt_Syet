@@ -1,6 +1,6 @@
 package tt;
 
-import io.cucumber.messages.types.Product;
+
 
 import java.time.LocalDate;
 import java.util.*;
@@ -14,13 +14,9 @@ import com.itextpdf.text.pdf.PdfWriter;
 
 import javax.mail.internet.InternetAddress;
 import javax.mail.*;
-import javax.mail.internet.InternetAddress;
+
 import javax.mail.internet.MimeMessage;
-import java.sql.Time;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.util.*;
-import java.util.logging.Logger;
+
 
 import static org.example.Main.logger;
 
@@ -100,23 +96,7 @@ public class mytest {
 
 
 
-       // List<Tproduct> order1Products = new ArrayList<>();
-       /* order1Products.add(p1);
-        order1Products.add(p3);
-        Torder myOrder1 = new Torder("Order 1: Cakes and Pies", new Date(), "Includes various cakes and pies", order1Products);
 
-        List<Tproduct> order2Products = new ArrayList<>();
-        order2Products.add(p2);
-        order2Products.add(p4);
-        Torder myOrder2 = new Torder("Order 2: Ice Cream and Rolls", new Date(), "Ice cream and pastries combo", order2Products);
-
-
-        List<Tproduct> order3Products = new ArrayList<>(List.of(p1, p2, p3, p4));
-        Torder myOrder3 = new Torder("Order 3: Full Menu", new Date(), "A full range of desserts", order3Products);
-
-        addorder(myOrder2);
-        addorder(myOrder1);
-        addorder(myOrder3);*/
         messages = new ArrayList<>();
         userMessages = new HashMap<>();
 
@@ -126,31 +106,31 @@ public class mytest {
         store1.addProduct(new Tproduct("P002", "Vanilla Ice Cream", "Dessert", 7.99, 20));
         store1.addProduct(new Tproduct("P003", "Strawberry Tart", "Dessert", 12.50, 5));
 
-// Example Store 2
+
         Store store2 = new Store("S002", "Gourmet Goodies", "sara@gmail.com");
         store2.addProduct(new Tproduct("P004", "Blueberry Muffin", "Bakery", 4.99, 15));
         store2.addProduct(new Tproduct("P005", "Cinnamon Roll", "Bakery", 3.50, 25));
         store2.addProduct(new Tproduct("P006", "Apple Pie", "Bakery", 14.99, 8));
 
-// Example Store 3
+
         Store store3 = new Store("S003", "Healthy Treats", "masa@gmail.com");
         store3.addProduct(new Tproduct("P007", "Gluten-Free Brownie", "Gluten-Free", 9.99, 12));
         store3.addProduct(new Tproduct("P008", "Vegan Cookies", "Vegan", 6.99, 18));
         store3.addProduct(new Tproduct("P009", "Almond Milkshake", "Vegan", 5.99, 10));
 
-// Example Store 4
+
         Store store4 = new Store("S004", "The Chocolate Factory", "ramah@gmail.com");
         store4.addProduct(new Tproduct("P010", "Dark Chocolate Bar", "Confectionery", 2.99, 50));
         store4.addProduct(new Tproduct("P011", "Milk Chocolate Truffles", "Confectionery", 11.99, 30));
         store4.addProduct(new Tproduct("P012", "White Chocolate Fudge", "Confectionery", 7.99, 20));
 
-// Example Store 5
+
         Store store5 = new Store("S005", "Bread & Butter", "s12112448@stu.najah.edu");
         store5.addProduct(new Tproduct("P013", "Sourdough Bread", "Bakery", 5.99, 15));
         store5.addProduct(new Tproduct("P014", "Bagel", "Bakery", 1.99, 40));
         store5.addProduct(new Tproduct("P015", "Baguette", "Bakery", 3.99, 20));
 
-// Add all stores to the stores list
+
         stores.add(store1);
         stores.add(store2);
         stores.add(store3);
@@ -592,7 +572,7 @@ public class mytest {
     }
 
     public void viewRecipeFeedback(String recipeTitle) {
-        // This method would typically fetch feedback data from the data store
+
     }
 
 
@@ -1121,12 +1101,12 @@ public class mytest {
             return;
         }
 
-        // Display all recipes
+
         System.out.println("All Recipes:");
             displayAllRecipes(input);
 
 
-        // Ask admin if they want to delete any recipe
+
         System.out.print("Enter the Recipe ID to delete (or press Enter to cancel): ");
         String recipeId = input.nextLine();
 
@@ -1243,16 +1223,16 @@ public class mytest {
         }
     }
     public static boolean isemailExists(String email) {
-        // Iterate through the list of registered users (up) to check if the email exists
+
         for (Person person : up) {
             if (person.getEmail().equalsIgnoreCase(email)) {
-                return true; // Email found
+                return true;
             }
         }
-        return false; // Email not found
+        return false;
     }
 
-    // Method for sending a new message without a reply
+
     public static void sendMessage(String senderEmail, String recipientEmail, String messageContent, String originalMessageId) {
 
         String messageId = UUID.randomUUID().toString();
@@ -1265,7 +1245,7 @@ public class mytest {
 
 
 
-    // Method to send a new message without an original message ID
+
     public static void sendMessage(String senderEmail, String recipientEmail, String messageContent) {
         sendMessage(senderEmail, recipientEmail, messageContent, null);  // Pass null for the originalMessageId
     }
@@ -1313,7 +1293,7 @@ public class mytest {
             }
         }
 
-        // Sort and display each conversation
+
         for (Map.Entry<String, List<Message>> entry : conversations.entrySet()) {
             entry.getValue().sort(Comparator.comparing(Message::getTimestamp)); // Sort messages by timestamp
 
@@ -1326,15 +1306,14 @@ public class mytest {
         }
     }
 
-    // Helper method to get user's name by email, assuming you have access to user details
     private String getNameByEmail(String email) {
         // Assuming 'up' is your list of all persons
         for (Person person : up) {
             if (person.getEmail().equals(email)) {
-                return person.getUserName(); // Assuming Person class has a getUserName method
+                return person.getUserName();
             }
         }
-        return "Unknown"; // Default case if user is not found
+        return "Unknown";
     }
 
     public Message getLastSentMessage() {
@@ -1380,13 +1359,13 @@ public class mytest {
     private static Person user = new Person();
     public static void displayStoresAndProducts(Scanner input,String useremail) {
 
-        String resetColor = "\u001B[0m"; // Reset color
+        String resetColor = "\u001B[0m";
         String[] storeColors = {
-                "\u001B[38;5;208m", // Light orange color
-                "\u001B[38;5;46m",  // Green color
-                "\u001B[38;5;21m",  // Blue color
-                "\u001B[38;5;196m", // Red color
-                "\u001B[38;5;226m"  // Yellow color
+                "\u001B[38;5;208m",
+                "\u001B[38;5;46m",
+                "\u001B[38;5;21m",
+                "\u001B[38;5;196m",
+                "\u001B[38;5;226m"
         };
 
         String headerFormat = "╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗\n";
@@ -1421,9 +1400,6 @@ public class mytest {
         }
         System.out.println(footer);
 
-        // Verify that the user is logged in and has a valid email
-
-        // Ask the user if they want to place an order
         System.out.print("Do you want to place an order? (yes/no): ");
         String orderChoice = input.nextLine().trim().toLowerCase();
 
@@ -1685,7 +1661,7 @@ public class mytest {
         System.out.println("Enter the ID of the product to apply discount:");
         String productId = input.nextLine().trim();
 
-        // Find the store owned by the user
+
         Store userStore = null;
         for (Store store : stores) {
             if (store.getstoreowner().equalsIgnoreCase(ownerEmail)) {
@@ -1699,14 +1675,14 @@ public class mytest {
             return;
         }
 
-        // Find the product in the store
+
         Tproduct product = userStore.findProductById(productId);
         if (product == null) {
             System.out.println("Product not found.");
             return;
         }
 
-        // Prompt user for discount details
+
         System.out.println("Enter the discount type (fixed/percentage):");
         String discountType = input.nextLine().trim().toLowerCase();
 
@@ -1727,12 +1703,12 @@ public class mytest {
         if (discountType.equals("fixed")) {
             System.out.println("Enter the discount amount (fixed value):");
             double discountAmount = input.nextDouble();
-            input.nextLine(); // consume newline
+            input.nextLine();
             applyFixedDiscount(product, discountAmount);
         } else if (discountType.equals("percentage")) {
             System.out.println("Enter the discount percentage:");
             double discountPercentage = input.nextDouble();
-            input.nextLine(); // consume newline
+            input.nextLine();
             applyPercentageDiscount(product, discountPercentage);
         } else {
             System.out.println("Invalid discount type. Please choose 'fixed' or 'percentage'.");
@@ -1745,18 +1721,18 @@ public class mytest {
 
     private static void applyFixedDiscount(Tproduct product, double discountAmount) {
         double newPrice = product.getprice() - discountAmount;
-        if (newPrice < 0) newPrice = 0; // Ensure price does not go negative
+        if (newPrice < 0) newPrice = 0;
         product.setprice(newPrice);
-        product.setDiscount(true); // Set discount status
+        product.setDiscount(true);
         System.out.println("Fixed discount applied: $" + discountAmount + " off product " + product.getproductName());
         showDiscountedProduct(product);
     }
 
     private static void applyPercentageDiscount(Tproduct product, double discountPercentage) {
         double newPrice = product.getprice() * (1 - discountPercentage / 100);
-        if (newPrice < 0) newPrice = 0; // Ensure price does not go negative
+        if (newPrice < 0) newPrice = 0;
         product.setprice(newPrice);
-        product.setDiscount(true); // Set discount status
+        product.setDiscount(true);
         System.out.println("Percentage discount applied: " + discountPercentage + "% off product " + product.getproductName());
         showDiscountedProduct(product);
     }
@@ -1767,10 +1743,10 @@ public class mytest {
     }
 
     public static void monitorSales(String ownerEmail, List<Store> stores, List<Torder> orderList) {
-        // Create a map to store total sales per product
+
         Map<String, Double> sales = new HashMap<>();
 
-        // Find the store of the given owner email
+
         Store ownerStore = null;
         for (Store store : stores) {
             if (store.getstoreowner().equalsIgnoreCase(ownerEmail)) {
@@ -1950,14 +1926,14 @@ public class mytest {
     }
 
     private static void sendOrderNotification(Torder order) {
-        // Find the store and store owner based on the products in the order
-        Tproduct firstProduct = order.getProducts().get(0);  // Assuming all products in the order are from the same store
+
+        Tproduct firstProduct = order.getProducts().get(0);
         Store store = findStoreByProductId(firstProduct.getPid());
         String storeOwnerEmail = store.getstoreowner();
         Person storeOwner = findPersonByEmail(storeOwnerEmail);
         Person customer = findPersonByEmail(order.getUserEmail());
 
-        // Construct the email message
+
         String emailContent = "Dear " + storeOwner.getUserName() + ",\n\n" +
                 "You have received a new order! Below are the details to help you prepare and dispatch the order promptly.\n\n" +
                 "Order ID: " + order.getOid() + "\n" +
@@ -1979,7 +1955,7 @@ public class mytest {
                 "Best regards,\n" +
                 "[The admin]\n";
 
-        // Send the email
+
         sendEmailTo(storeOwnerEmail, emailContent);
     }
     private static Store findStoreByProductId(String productId) {

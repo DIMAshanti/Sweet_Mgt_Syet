@@ -10,11 +10,11 @@ public class Person {
     private String phoneNum;
     private  String City;
     private  String Role;
-    private String businessInfo;  // Add this field
+    private String businessInfo;
 
 
 
-  //  private ArrayList<Event> eventList =new ArrayList<>();
+
 
 
     public Person(  String id,String un, String pa,String em, String city, String pn, String role) {
@@ -71,7 +71,7 @@ public class Person {
     }
 
 
-    // Add a getter and setter for businessInfo
+
     public String getBusinessInfo() {
         return businessInfo;
     }
@@ -81,22 +81,6 @@ public class Person {
     }
 
 
-  /*  public List<Event> getEventList() {
-        return eventList;
-    }*/
-/*
 
-    public void addUserEvent(Event e){
-        eventList.add(e);
-    }
-    public Event searchInUserEvents(String e1){
-        for (Event e:eventList){
-            if(e.getEventName().equals(e1)){
-
-                return e;
-            }
-        }
-        return null;
-    }*/
 
 }
