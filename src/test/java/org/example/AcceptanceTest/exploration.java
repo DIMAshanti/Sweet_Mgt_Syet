@@ -6,7 +6,7 @@ import io.cucumber.java.en.When;
 import tt.mytest;
 
 import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.assertEquals;
+
 
 public class exploration {
     public mytest obj;
