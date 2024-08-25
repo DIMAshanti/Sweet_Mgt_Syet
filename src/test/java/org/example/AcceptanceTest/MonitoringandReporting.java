@@ -1,16 +1,12 @@
 package org.example.AcceptanceTest;
 
 
-import io.cucumber.java.en.Given;
+
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import static org.junit.Assert.*;
-import static org.junit.Assert.assertTrue;
-
-import java.util.*;
 
 import tt.ReportManager;
-import tt.Tproduct;
+
 import tt.mytest;
 
 
