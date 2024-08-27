@@ -19,6 +19,7 @@
         <sonar.test.exclusions>src/main/java/org/example/main.java</sonar.test.exclusions>
     </properties>
 
+         
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
