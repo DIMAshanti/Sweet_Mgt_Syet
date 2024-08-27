@@ -4,14 +4,7 @@ package org.example.AcceptanceTest;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import java.lang.AssertionError;
 
-import org.junit.Assert;
-import tt.Message;
-import tt.Person;
-import tt.mytest;
-
-import java.util.*;
 public class Store {
 
 

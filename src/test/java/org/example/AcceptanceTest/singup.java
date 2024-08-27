@@ -3,15 +3,15 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Given;
 
-import tt.mytest;
+import tt.MyTest;
 
 import static org.junit.Assert.*;
 
 public class singup {
-    public mytest obj;
+    public MyTest obj;
 
 
-    public singup(mytest iobj) {
+    public singup(MyTest iobj) {
         super();
         this.obj = iobj;
 

@@ -3,7 +3,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Given;
 import tt.Person;
-import tt.mytest;
+import tt.MyTest;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -11,7 +11,7 @@ import static org.junit.Assert.assertTrue;
 public class Login {
 
 
-    public Login(mytest iobj) {
+    public Login(MyTest iobj) {
         super();
         this.obj = iobj;
         Person u1 = new Person("1", "haya", "123", "haya@gmail.com", "Qalqilya", "0599221233", "user");
@@ -22,7 +22,7 @@ public class Login {
 
     }
     public boolean forget = false;
-    public mytest obj;
+    public MyTest obj;
     @Given("I am not in system")
     public void iAmNotInSystem() {
         obj.iAmNotInSystem(obj);

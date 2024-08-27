@@ -3,15 +3,14 @@ package org.example.AcceptanceTest;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import tt.mytest;
-import tt.mytest.Recipe;
-import tt.recipe;
+import tt.MyTest;
+
 import static org.junit.Assert.*;
 public class feedback {
-    private mytest obj;
+    private MyTest obj;
 
     public feedback() {
-        this.obj = new mytest();
+        this.obj = new MyTest();
     }
 
     @When("I view feedback for the recipe titled {string}")

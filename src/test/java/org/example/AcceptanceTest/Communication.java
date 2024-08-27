@@ -3,21 +3,19 @@ package org.example.AcceptanceTest;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import java.lang.AssertionError;
 
 import org.junit.Assert;
 import tt.Message;
-import tt.Person;
-import tt.mytest;
+import tt.MyTest;
 
 import java.util.*;
 
 public class Communication {
 
-    private mytest obj;
+    private MyTest obj;
     private String loggedInUserEmail;
 
-    public Communication(mytest iobj) {
+    public Communication(MyTest iobj) {
         super();
         this.obj = iobj;
     }

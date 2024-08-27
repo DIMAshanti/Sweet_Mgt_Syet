@@ -3,15 +3,15 @@ package org.example.AcceptanceTest;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import tt.mytest;
+import tt.MyTest;
 
 import static org.junit.Assert.assertTrue;
 
 
 public class exploration {
-    public mytest obj;
+    public MyTest obj;
 
-    public exploration(mytest iobj) {
+    public exploration(MyTest iobj) {
         super();
         this.obj = iobj;
     }

@@ -15,7 +15,7 @@ import java.util.logging.LogRecord;
 import java.util.logging.Logger;
 import java.util.Scanner;
 
-import static tt.mytest.*;
+import static tt.MyTest.*;
 
 public class Main {
     private static final String ANSI_PURPLE = "\n\u001B[95m";
@@ -61,7 +61,7 @@ public class Main {
         }
     }
 
-    static mytest obj = new mytest();
+    static MyTest obj = new MyTest();
 
     public static void main(String[] args) {
         logInSignUp();
@@ -622,7 +622,7 @@ public class Main {
                 displaycomMenu(input);
             case 4:
                 logger.info("Exit...");
-                //logInSignUp();
+
                 break;
 
             default:

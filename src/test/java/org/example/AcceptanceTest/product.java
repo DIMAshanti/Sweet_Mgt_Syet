@@ -5,17 +5,17 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import tt.Tproduct;
-import tt.mytest;
+import tt.MyTest;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class product {
-    private final mytest testInstance = new mytest();
+    private final MyTest testInstance = new MyTest();
     private final Map<String, Tproduct> inventory = new HashMap<>();
     private String dashboardMessage;
-    private final mytest testContext = new mytest();
+    private final MyTest testContext = new MyTest();
     private Tproduct currentProduct;
     private double appliedDiscount;
     private boolean discountAppliedSuccessfully;

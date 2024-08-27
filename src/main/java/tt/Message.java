@@ -1,14 +1,13 @@
 package tt;
 
-import java.time.LocalDateTime; // Import the LocalDateTime class for handling timestamps
-
+import java.time.LocalDateTime;
 public class Message {
     private String messageId;
     private String senderEmail;
     private String recipientEmail;
     private String messageContent;
-    private LocalDateTime timestamp; // Field to store the timestamp of the message
-    private String originalMessageId; // Field to link replies to their original message
+    private LocalDateTime timestamp;
+    private String originalMessageId;
 
     // Constructor
     public Message(String messageId, String senderEmail, String recipientEmail, String messageContent) {
@@ -55,7 +54,7 @@ public class Message {
         return originalMessageId;
     }
 
-    // Setter for originalMessageId
+
     public void setOriginalMessageId(String originalMessageId) {
         this.originalMessageId = originalMessageId;
     }

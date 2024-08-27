@@ -3,17 +3,16 @@ package org.example.AcceptanceTest;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import tt.mytest;
-import tt.mytest.Recipe;
-import tt.recipe;
+import tt.MyTest;
+
 import static org.junit.Assert.*;
 
 public class content {
 
-    private mytest obj;
+    private MyTest obj;
 
     public content() {
-        this.obj = new mytest();
+        this.obj = new MyTest();
     }
 
     @Given("I am logged in as an admin")

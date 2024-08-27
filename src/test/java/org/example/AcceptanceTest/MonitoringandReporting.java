@@ -7,7 +7,7 @@ import io.cucumber.java.en.When;
 
 import tt.ReportManager;
 
-import tt.mytest;
+import tt.MyTest;
 
 
 public class MonitoringandReporting {
@@ -18,10 +18,10 @@ public class MonitoringandReporting {
     private String startDate;
     private String endDate;
     private String selectedCity;
-    public mytest obj;
+    public MyTest obj;
 
 
-    public MonitoringandReporting(mytest iobj) {
+    public MonitoringandReporting(MyTest iobj) {
         super();
         this.obj = iobj;
 
